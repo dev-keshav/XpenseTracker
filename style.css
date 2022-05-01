@@ -248,6 +248,7 @@ input[type=number] {
     width: 360px;
     bottom: 0;
     border-top: 1px solid #ccc;
+    padding-bottom: 5%;
 }
 
 .budget-dashboard #expense .input *{
