@@ -1,5 +1,3 @@
-/* www.youtube.com/CodeExplained */
-
 // SELECT CHART ELEMENT
 const chart = document.querySelector(".chart");
 
