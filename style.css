@@ -42,7 +42,7 @@ input[type=number] {
 .budget-container{
     position: absolute;
     width: 360px;
-    height: 780px;
+    height: 760px;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
