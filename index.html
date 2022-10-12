@@ -10,15 +10,19 @@
     <div id="login-box">
         <div class="left">
             <h1 id='status'>Sign Up</h1>
-            <div class="created-alert">Account has been created successfully</div>
-            <input type="text" id="username" name="username" placeholder="username" />
-            <input type="text" id="email" name="email" placeholder="E-mail" />
-            <input type="password" id="password" name="password" placeholder="Password" />
-            <!-- <input type="password" id="conformpassword" name="conformpassword" placeholder="conform Password" /> -->
+            <!-- <form action="" id="contactForm"> -->
+                <div class="created-alert">Account has been created successfully</div>
+                <div class="already-exits">Account already exits</div>
+                <input type="text" id="username" name="username" placeholder="username" />
+                <input type="text" id="email" name="email" placeholder="E-mail" />
+                <input type="password" id="password" name="password" placeholder="Password" />
+                <!-- <input type="password" id="conformpassword" name="conformpassword" placeholder="conform Password" /> -->
 
-            <input type="submit" id='signUp' name="signup_submit" value="Sign up" />
-            <br><br>
+                <input type="submit" id='signUp' name="signup_submit" value="Sign up" />
+                <br><br>
+            <!-- </form> -->
 
+            <p>Already have an account?</p>
             <a class="already-login" href="login.html">Log-In</a>
 
         </div>
@@ -87,13 +91,25 @@
                 setTimeout(() => {
                     document.querySelector('.created-alert').style.display = 'none';
                 }, 3000);
+
+
+                
+                window.location.assign("login.html");
+
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
 
-                alert(errorMessage);
+                // alert(errorMessage);
+                document.querySelector('.already-exits').style.display = 'block';
+
+                setTimeout(() => {
+                    document.querySelector('.already-exits').style.display = 'none';
+                }, 3000);
             });
+
+
     })
 </script>
 
