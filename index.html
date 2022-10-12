@@ -2,7 +2,7 @@
 
 <head>
     <title>Firebase Authentication</title>
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -10,6 +10,7 @@
     <div id="login-box">
         <div class="left">
             <h1 id='status'>Sign Up</h1>
+            <div class="created-alert">Account has been created successfully</div>
             <input type="text" id="username" name="username" placeholder="username" />
             <input type="text" id="email" name="email" placeholder="E-mail" />
             <input type="password" id="password" name="password" placeholder="Password" />
@@ -70,19 +71,27 @@
 
                 // -------------------------------------------
                 // add to realtime database 
-                set(ref(database, 'user/' + user.uid),{
+                set(ref(database, 'user/' + user.uid), {
                     username: username,
                     email: email,
                     // never save your password to database 
                 })
                 // ---------------------------------------------
 
-                alert('user created')
+                // alert('user created')
+
+                // enable alert
+                document.querySelector('.created-alert').style.display = 'block';
+
+                // remove the alert
+                setTimeout(() => {
+                    document.querySelector('.created-alert').style.display = 'none';
+                }, 3000);
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                
+
                 alert(errorMessage);
             });
     })
