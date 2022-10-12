@@ -11,6 +11,7 @@
         <div class="left">
             <h1 id='status'>Login</h1>
             <!-- <input type="text" id="username" name="username" placeholder="username" /> -->
+            <div class="incorrect-login">Incorrect email/password</div>
             <input type="text" id="email" name="email" placeholder="E-mail" />
             <input type="password" id="password" name="password" placeholder="Password" />
 
@@ -139,11 +140,17 @@
                 const errorCode = error.code;
                 const errorMessage = error.message;
 
-                alert(errorMessage);
+                // alert(errorMessage);
+                document.querySelector('.incorrect-login').style.display = 'block';
+
+                setTimeout(() => {
+                    document.querySelector('.incorrect-login').style.display = 'none';
+                }, 3000);
+
             });
 
-            document.getElementById('email').reset();
-            document.getElementById('password').reset();
+            // document.getElementById('email').reset();
+            // document.getElementById('password').reset();
 
     });
 
